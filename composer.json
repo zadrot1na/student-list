@@ -1,0 +1,15 @@
+{
+  "name": "vendor_name/student-list",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "38093",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    
+  }
+}
