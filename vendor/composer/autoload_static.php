@@ -6,14 +6,52 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit191d119f8a7fca5d36adaa9023b015e8
 {
-    public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPRouter\\' => 10,
+        ),
+        'F' => 
+        array (
+            'Fig\\Http\\Message\\' => 17,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'PHPRouter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dannyvankooten/php-router/src',
+        ),
+        'Fig\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fig/http-message-util/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'B' => 
+        array (
+            'Bramus' => 
+            array (
+                0 => __DIR__ . '/..' . '/bramus/router/src',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit191d119f8a7fca5d36adaa9023b015e8::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit191d119f8a7fca5d36adaa9023b015e8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit191d119f8a7fca5d36adaa9023b015e8::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit191d119f8a7fca5d36adaa9023b015e8::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

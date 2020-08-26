@@ -6,4 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'PHPRouter\\' => array($vendorDir . '/dannyvankooten/php-router/src'),
+    'Fig\\Http\\Message\\' => array($vendorDir . '/fig/http-message-util/src'),
+    'App\\' => array($baseDir . '/src'),
 );

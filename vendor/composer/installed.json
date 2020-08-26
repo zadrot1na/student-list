@@ -1,4 +1,168 @@
-{
-    "packages": [],
-    "dev": true
-}
+[
+    {
+        "name": "bramus/router",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bramus/router.git",
+            "reference": "60926db086b797c77081ea1165d1f590464adf13"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bramus/router/zipball/60926db086b797c77081ea1165d1f590464adf13",
+            "reference": "60926db086b797c77081ea1165d1f590464adf13",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "~2.14",
+            "phpunit/php-code-coverage": "~2.0",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2019-02-27T10:21:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Bramus": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bram(us) Van Damme",
+                "email": "bramus@bram.us",
+                "homepage": "http://www.bram.us"
+            }
+        ],
+        "description": "A lightweight and simple object oriented PHP Router",
+        "homepage": "https://github.com/bramus/router",
+        "keywords": [
+            "router",
+            "routing"
+        ]
+    },
+    {
+        "name": "dannyvankooten/php-router",
+        "version": "1.2.0-alpha",
+        "version_normalized": "1.2.0.0-alpha",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dannyvankooten/PHP-Router.git",
+            "reference": "5c5831e0bad321a2db184486e3589c2a2813ef83"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dannyvankooten/PHP-Router/zipball/5c5831e0bad321a2db184486e3589c2a2813ef83",
+            "reference": "5c5831e0bad321a2db184486e3589c2a2813ef83",
+            "shasum": ""
+        },
+        "require": {
+            "fig/http-message-util": "^1.1",
+            "php": "^5.3.0|^7.0"
+        },
+        "require-dev": {
+            "malukenho/docheader": "^0.1.5",
+            "phpunit/phpunit": "4.8.*",
+            "squizlabs/php_codesniffer": "2.*"
+        },
+        "time": "2017-03-09T21:53:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PHPRouter\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Danny van Kooten",
+                "email": "dannyvankooten@gmail.com",
+                "homepage": "http://dannyvankooten.com/"
+            },
+            {
+                "name": "Jefersson Nathan",
+                "email": "malukenho@phpse.net"
+            }
+        ],
+        "description": "Simple PHP Router, supports REST and reverse routing.",
+        "homepage": "https://github.com/dannyvankooten/PHP-Router",
+        "keywords": [
+            "rest",
+            "router",
+            "routing"
+        ],
+        "support": {
+            "issues": "https://github.com/dannyvankooten/PHP-Router/issues",
+            "source": "https://github.com/dannyvankooten/PHP-Router/tree/hotfix-101"
+        }
+    },
+    {
+        "name": "fig/http-message-util",
+        "version": "1.1.4",
+        "version_normalized": "1.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message-util.git",
+            "reference": "3242caa9da7221a304b8f84eb9eaddae0a7cf422"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-message-util/zipball/3242caa9da7221a304b8f84eb9eaddae0a7cf422",
+            "reference": "3242caa9da7221a304b8f84eb9eaddae0a7cf422",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.3 || ^7.0"
+        },
+        "suggest": {
+            "psr/http-message": "The package containing the PSR-7 interfaces"
+        },
+        "time": "2020-02-05T20:36:27+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Fig\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Utility classes and constants for use with PSR-7 (psr/http-message)",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ],
+        "support": {
+            "issues": "https://github.com/php-fig/http-message-util/issues",
+            "source": "https://github.com/php-fig/http-message-util/tree/1.1.4"
+        }
+    }
+]

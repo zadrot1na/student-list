@@ -4,7 +4,8 @@ namespace App\Controller;
 
 class StudentController
 {
-    public function all($request) {
-
+    public function all() {
+        echo 'hello';
+        var_dump(123);
     }
 }
