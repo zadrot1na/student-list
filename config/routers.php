@@ -1,5 +1,6 @@
 <?php
 
-$router->setNamespace('\App\Controllers');
+//$router->setNamespace('\App\Controller');
 
-$router->get('', 'StudentController@all');
+$router->get('', '\App\Controller\StudentController@all');
+$router->get('/show', '\App\Controller\StudentController@show');

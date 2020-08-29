@@ -24,6 +24,15 @@ private static $installed = array (
   ),
   'versions' => 
   array (
+    'bramus/router' => 
+    array (
+      'pretty_version' => '1.4.2',
+      'version' => '1.4.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '60926db086b797c77081ea1165d1f590464adf13',
+    ),
     'dannyvankooten/php-router' => 
     array (
       'pretty_version' => '1.2.0-alpha',
