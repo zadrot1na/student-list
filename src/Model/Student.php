@@ -8,11 +8,11 @@ class Student
     private $surname;
     private $gender;
     private $age;
-    private $groupNumber;
+    private $groupnumber;
     private $mail;
     private $score;
     private $dob;
-    private $isSocial;
+    private $islocal;
     private $id;
 
     /**
@@ -21,24 +21,24 @@ class Student
      * @param $surname
      * @param $gender
      * @param $age
-     * @param $groupNumber
+     * @param $groupnumber
      * @param $mail
      * @param $score
      * @param $dob
-     * @param $isSocial
+     * @param $islocal
      * @param $id
      */
-    public function __construct($name, $surname, $gender, $age, $groupNumber, $mail, $score, $dob, $isSocial, $id)
+    public function __construct($name, $surname, $gender, $age, $groupnumber, $mail, $score, $dob, $islocal, $id)
     {
         $this->name = $name;
         $this->surname = $surname;
         $this->gender = $gender;
         $this->age = $age;
-        $this->groupNumber = $groupNumber;
+        $this->groupnumber = $groupnumber;
         $this->mail = $mail;
         $this->score = $score;
         $this->dob = $dob;
-        $this->isSocial = $isSocial;
+        $this->islocal = $islocal;
         $this->id = $id;
     }
 
@@ -77,9 +77,9 @@ class Student
     /**
      * @return mixed
      */
-    public function getGroupNumber()
+    public function getGroupnumber()
     {
-        return $this->groupNumber;
+        return $this->groupnumber;
     }
 
     /**
@@ -109,9 +109,9 @@ class Student
     /**
      * @return mixed
      */
-    public function getIsSocial()
+    public function getIslocal()
     {
-        return $this->isSocial;
+        return $this->islocal;
     }
 
     /**

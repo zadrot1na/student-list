@@ -25,8 +25,6 @@
     <?php
     if (isset($students)) {
         foreach($students as $row) {
-          //var_dump($row);
-          //exit();
             echo "<tr><td scope='col'>$row[name] </td><td scope='col'>$row[surname] </td><td scope='col'>$row[groupnumber] </td><td scope='col'>$row[score] </td>
             </tr>";
         }
