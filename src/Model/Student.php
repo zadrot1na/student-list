@@ -13,7 +13,6 @@ class Student
     private $score;
     private $dob;
     private $islocal;
-    private $id;
 
     /**
      * Student constructor.
@@ -26,9 +25,8 @@ class Student
      * @param $score
      * @param $dob
      * @param $islocal
-     * @param $id
      */
-    public function __construct($name, $surname, $gender, $age, $groupnumber, $mail, $score, $dob, $islocal, $id)
+    public function __construct($name, $surname, $gender, $age, $groupnumber, $mail, $score, $dob, $islocal)
     {
         $this->name = $name;
         $this->surname = $surname;
@@ -39,7 +37,6 @@ class Student
         $this->score = $score;
         $this->dob = $dob;
         $this->islocal = $islocal;
-        $this->id = $id;
     }
 
     /**
@@ -113,16 +110,6 @@ class Student
     {
         return $this->islocal;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
 
 
 }

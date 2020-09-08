@@ -13,13 +13,29 @@ class StudentRepository
         $connection = new \PDO('mysql:host=localhost;dbname=studentsdb;charset=utf8', 'root', '');
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $statement = 'INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-//                                        values (:name, :surname, :gender, :age, :groupNumber, :mail, :score, :dob, :islocal, :id)";
+        $STH = $connection->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
+                         values (:name, :surname, :gender, :age, :groupnumber, :mail, :score, :dob, :islocal)");
 
-        $STH = $connection->prepare($statement);
-        var_dump((array)$student); /*TODO modify array keys*/
-        $STH->execute($student);
+        $name = $student->getName();
+        $surname = $student->getSurname();
+        $gender = $student->getGender();
+        $age = $student->getAge();
+        $groupnumber = $student->getGroupnumber();
+        $mail = $student->getMail();
+        $score = $student->getScore();
+        $dob = $student->getDob();
+        $islocal = $student->getIslocal();
 
-        // $STH->execute((array)$student);
+        $STH->bindParam('name', $name);
+        $STH->bindParam('surname', $surname);
+        $STH->bindParam('gender',$gender);
+        $STH->bindParam('age', $age);
+        $STH->bindParam('groupnumber',$groupnumber);
+        $STH->bindParam('mail', $mail);
+        $STH->bindParam('score',$score);
+        $STH->bindParam('dob',$dob);
+        $STH->bindParam('islocal',$islocal);
+
+        $STH->execute();
     }
 }

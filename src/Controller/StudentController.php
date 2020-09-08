@@ -18,13 +18,9 @@ class StudentController
     }
 
     public function create() {
-        //$connection = new \PDO('mysql:host=localhost;dbname=studentsdb;charset=utf8','root', '');
-
-        require_once __DIR__ . '/../Repository/StudentRepository.php';
-
-        $Student = new Student('john','miller','male',15,17,'john@mail.com',175,2000,false,2);
+        $student = new Student('john','miller','male',15,17,'john@mail.com',175,2000,false);
 
         $StudentGateway = new StudentRepository();
-        $StudentGateway->create($Student);
+        $StudentGateway->create($student);
     }
 }
