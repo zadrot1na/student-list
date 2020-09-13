@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body style="padding: 2%">
+
+<form method="post">
+
+    <!--name--> <div class="row mb-3">
+        <label for="InputName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="InputName">
+        </div>
+    </div>
+
+    <!--surname-->  <div class="row mb-3">
+        <label for="InputSurname" class="col-sm-2 col-form-label">Surname</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="InputSurname">
+        </div>
+    </div>
+
+    <!--gender-->  <fieldset>
+        <div class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="Gender1" value="male" checked>
+                    <label class="form-check-label" for="Gender1">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="Gender2" value="female">
+                    <label class="form-check-label" for="Gender2">
+                        Female
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <!--age--> <div class="row mb-3">
+        <label for="InputAge" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-1">
+            <input type="number" max="100"  class="form-control" id="InputAge">
+        </div>
+    </div>
+
+    <!--groupNumber-->  <div class="row mb-3">
+        <label for="InputGroupNumber" class="col-sm-2 col-form-label">Group Number</label>
+        <div class="col-sm-2">
+            <input type="text" maxlength="5" class="form-control" id="InputGroupNumber">
+        </div>
+    </div>
+
+    <!--mail--> <div class="row mb-3">
+        <label for="InputMail" class="col-sm-2 col-form-label">Mail</label>
+        <div class="col-sm-5">
+            <input type="email" class="form-control" id="InputMail">
+        </div>
+    </div>
+
+    <!--score--> <div class="row mb-3">
+        <label for="inputScore" class="col-sm-2 col-form-label">Score</label>
+        <div class="col-sm-1">
+            <input type="number" min="0" max="200" class="form-control" id="inputScore">
+        </div>
+    </div>
+
+    <!--dob--> <div class="row mb-3">
+    <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
+    <div class="col-sm-2">
+        <input type="date" class="form-control" id="inputDob">
+    </div>
+</div>
+
+    <!--isLocal--><div class="row mb-3">
+        <div class="col-form-label col-sm-2 pt-0">Are you local?</div>
+        <div class="col-sm-1">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="isLocalCheck">
+                <label class="form-check-label" for="isLocalCheck">
+                    Yes
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</body>
+</html>

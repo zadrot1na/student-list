@@ -11,7 +11,8 @@
   ],
   "require": {
     "dannyvankooten/php-router": "1.2.0-alpha",
-    "bramus/router": "~1.4"
+    "bramus/router": "~1.4",
+    "ext-pdo": "*"
   },
   "autoload": {
     "psr-4": {

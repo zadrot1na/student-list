@@ -10,11 +10,11 @@ class StudentController
 {
 
     public function all() {
-        $connection = new \PDO('mysql:host=localhost;dbname=studentsdb;charset=utf8','root', '');
+        $connection = new PDO('mysql:host=localhost;dbname=studentsdb;charset=utf8','root', '');
 
-        $students = $connection->query('SELECT * FROM students');
+        $students = $connection->query('SELECT * FROM `students`');
 
-        include __DIR__ . '/../../View/showStudents.php';
+        include __DIR__ . '/../View/showStudents.html';
     }
 
     public function create() {
