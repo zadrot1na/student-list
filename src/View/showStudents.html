@@ -10,7 +10,14 @@
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 </head>
 <body>
-
+<div class="container">
+    <div class="row row-cols-4">
+        <div class="col"></div>
+        <div class="col-sm-3">
+            <a class="btn btn-success btn-lg" href="register.html" role="button">Register</a>
+        </div>
+    </div>
+</div>
 <table class="table">
     <thead>
     <tr>
@@ -24,9 +31,13 @@
     <?php
     if (isset($students)) {
         foreach($students as $row) {
-            echo "<tr><td scope='col'>$row[name] </td><td scope='col'>$row[surname] </td><td scope='col'>$row[groupnumber] </td><td scope='col'>$row[score] </td>
-            </tr>";
-        }
+            echo "<tr>
+    <td scope='col'>$row[name]</td>
+    <td scope='col'>$row[surname]</td>
+    <td scope='col'>$row[groupnumber]</td>
+    <td scope='col'>$row[score]</td>
+    </tr>";
+    }
     }
     ?>
     </tbody>

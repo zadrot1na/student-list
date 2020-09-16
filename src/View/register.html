@@ -11,19 +11,19 @@
 </head>
 <body style="padding: 2%">
 
-<form method="post">
+<form action="../Controller/StudentController.php" method="post" id="RegistrationForm">
 
     <!--name--> <div class="row mb-3">
         <label for="InputName" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="InputName">
+            <input type="text" class="form-control" id="InputName" required>
         </div>
     </div>
 
     <!--surname-->  <div class="row mb-3">
         <label for="InputSurname" class="col-sm-2 col-form-label">Surname</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="InputSurname">
+            <input type="text" class="form-control" id="InputSurname" required>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
     <!--groupNumber-->  <div class="row mb-3">
         <label for="InputGroupNumber" class="col-sm-2 col-form-label">Group Number</label>
         <div class="col-sm-2">
-            <input type="text" maxlength="5" class="form-control" id="InputGroupNumber">
+            <input type="text" maxlength="5" class="form-control" id="InputGroupNumber" required>
         </div>
     </div>
 
@@ -71,14 +71,14 @@
     <!--score--> <div class="row mb-3">
         <label for="inputScore" class="col-sm-2 col-form-label">Score</label>
         <div class="col-sm-1">
-            <input type="number" min="0" max="200" class="form-control" id="inputScore">
+            <input type="number" min="0" max="200" class="form-control" id="inputScore" required>
         </div>
     </div>
 
     <!--dob--> <div class="row mb-3">
     <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
     <div class="col-sm-2">
-        <input type="date" class="form-control" id="inputDob">
+        <input type="date" class="form-control" id="inputDob" required>
     </div>
 </div>
 
