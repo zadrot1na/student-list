@@ -20,6 +20,8 @@ class StudentController
 
     public function create()
     {
+        // TODO: NEVER COMMIT ANY LOCAL DEBUG STATEMENTS
+        // In repository must be only working version of your code
         echo 'func create';
         die();
         $student = new Student('john', 'miller', 'male', 15, 17, 'john@mail.com', 175, 2000, false);

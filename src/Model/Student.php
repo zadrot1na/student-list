@@ -2,6 +2,12 @@
 
 namespace App\Model;
 
+/**
+ * TODO:Where's all PHPDoc blocks? Where's type hinting for primitive class properties?
+ * TODO:Did you even read PSR-* standards?
+ * TODO:Where cameCase style of naming?
+ * TODO:Also add type hinting for class's methods.
+ */
 class Student
 {
     private $name;

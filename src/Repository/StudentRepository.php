@@ -1,13 +1,22 @@
 <?php
-
+/**
+ * TODO:Where's all PHPDoc blocks? Where's type hinting for primitive class properties?
+ * TODO:Did you even read PSR-* standards?
+ * TODO:Where cameCase style of naming?
+ * TODO:Also add type hinting for class's methods.
+ */
 
 namespace App\Repository;
 
+# TODO: WTF is that? Couldn't you just write "\PDO()"?
 use PDO;
 
 
 class StudentRepository
 {
+    // TODO: How do you think should create method return some data?
+    // For example, maybe it would be nice to return the id of inserted row?
+    // Or even better, it can return saved Student object with seated id
     public function create(\App\Model\Student $student)
     {
         $connection = new \PDO('mysql:host=localhost;dbname=studentsdb;charset=utf8', 'root', '');
