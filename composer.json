@@ -1,0 +1,22 @@
+{
+  "name": "vendor_name/student-list",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "38093",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "dannyvankooten/php-router": "1.2.0-alpha",
+    "bramus/router": "~1.4",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src"
+    }
+  }
+}
