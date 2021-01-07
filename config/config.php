@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
-$database = 'database';
+$host = 'mysql';
+$database = 'students';
 $user = 'root';
-$password = '1234567';
+$password = 'symfony';

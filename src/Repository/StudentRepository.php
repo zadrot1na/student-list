@@ -10,7 +10,7 @@ class StudentRepository
 {
     public function create(\App\Model\Student $student)
     {
-        $connection = new \PDO('mysql:host=localhost;dbname=studentsdb;charset=utf8', 'root', '');
+        $connection = new \PDO('mysql:host=mysql;dbname=students;charset=utf8', 'root', 'symfony');
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $STH = $connection->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 

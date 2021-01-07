@@ -11,7 +11,7 @@ class StudentController
 
     public function all()
     {
-        $connection = new PDO('mysql:host=mysql;dbname=studentsdb;charset=utf8', 'root', 'symfony');
+        $connection = new PDO('mysql:host=mysql;dbname=students;charset=utf8', 'root', 'symfony');
 
         $students = $connection->query('SELECT * FROM `students`');
 
