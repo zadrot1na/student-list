@@ -13,6 +13,7 @@ class Student
     private $score;
     private $dob;
     private $islocal;
+    private $id;
 
     /**
      * Student constructor.
