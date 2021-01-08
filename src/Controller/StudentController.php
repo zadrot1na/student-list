@@ -9,7 +9,7 @@ use PDO;
 class StudentController
 {
 
-    public function all()
+    public function showStudents()
     {
         $connection = new PDO('mysql:host=mysql;dbname=students;charset=utf8', 'root', 'symfony');
 
@@ -27,6 +27,8 @@ class StudentController
     {
         echo 'register handler';
         //TODO::register handler
+
+
     }
 
     public function create()
@@ -43,7 +45,7 @@ class StudentController
 
 
         $StudentGateway = new StudentRepository();
-        $StudentGateway->create($student);
+        $StudentGateway->addStudent($student);
     }
 
     public function remove()
