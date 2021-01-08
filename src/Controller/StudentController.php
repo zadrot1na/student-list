@@ -26,14 +26,21 @@ class StudentController
     public function registerHandler()
     {
         echo 'register handler';
-        //TODO::register handler
 
+        $student = new Student($_POST['InputName'], $_POST['InputSurname'], $_POST['gender'],
+            $_POST['InputAge'], $_POST['InputGroupNumber'], $_POST['InputMail'], $_POST['InputScore'],
+            $_POST['InputDob'], $_POST['IsLocalCheck']);
+      //  echo (App\Repositoty\StudentRepository)->addStudent($student) . 'registration successful';
 
+        $repos = new StudentRepository();
+        echo $repos->addStudent($student);
     }
 
     public function create()
     {
         echo 'regiser page';
+
+
         die();
         $student = new Student('john', 'miller', 'male', 15, 17, 'john@mail.com', 175, 2000, false);
 
@@ -41,7 +48,6 @@ class StudentController
             echo 'NOW ITS POST';
         else
             include __DIR__ . '/../View/register.html';
-
 
 
         $StudentGateway = new StudentRepository();

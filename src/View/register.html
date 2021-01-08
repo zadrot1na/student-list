@@ -16,14 +16,14 @@
     <!--name--> <div class="row mb-3">
         <label for="InputName" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="InputName" required>
+            <input type="text" class="form-control" id="InputName" name="InputName" required>
         </div>
     </div>
 
     <!--surname-->  <div class="row mb-3">
         <label for="InputSurname" class="col-sm-2 col-form-label">Surname</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="InputSurname" required>
+            <input type="text" class="form-control" id="InputSurname" name="InputSurname" required>
         </div>
     </div>
 
@@ -32,13 +32,13 @@
             <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="Gender1" value="male" checked>
+                    <input class="form-check-input" type="radio" name="gender" id="Gender1" name="Gender1" value="male" checked>
                     <label class="form-check-label" for="Gender1">
                         Male
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="Gender2" value="female">
+                    <input class="form-check-input" type="radio" name="gender" id="Gender2" name="Gender2" value="female">
                     <label class="form-check-label" for="Gender2">
                         Female
                     </label>
@@ -50,35 +50,35 @@
     <!--age--> <div class="row mb-3">
         <label for="InputAge" class="col-sm-2 col-form-label">Age</label>
         <div class="col-sm-1">
-            <input type="number" max="100"  class="form-control" id="InputAge">
+            <input type="number" max="100"  class="form-control" id="InputAge" name="InputAge">
         </div>
     </div>
 
     <!--groupNumber-->  <div class="row mb-3">
         <label for="InputGroupNumber" class="col-sm-2 col-form-label">Group Number</label>
         <div class="col-sm-2">
-            <input type="text" maxlength="5" class="form-control" id="InputGroupNumber" required>
+            <input type="text" maxlength="5" class="form-control" id="InputGroupNumber" name="InputGroupNumber" required>
         </div>
     </div>
 
     <!--mail--> <div class="row mb-3">
         <label for="InputMail" class="col-sm-2 col-form-label">Mail</label>
         <div class="col-sm-5">
-            <input type="email" class="form-control" id="InputMail">
+            <input type="email" class="form-control" id="InputMail" name="InputMail">
         </div>
     </div>
 
     <!--score--> <div class="row mb-3">
         <label for="inputScore" class="col-sm-2 col-form-label">Score</label>
         <div class="col-sm-1">
-            <input type="number" min="0" max="200" class="form-control" id="inputScore" required>
+            <input type="number" min="0" max="200" class="form-control" id="inputScore" name="InputScore" required>
         </div>
     </div>
 
     <!--dob--> <div class="row mb-3">
     <label for="inputDob" class="col-sm-2 col-form-label">DOB</label>
     <div class="col-sm-2">
-        <input type="date" class="form-control" id="inputDob" required>
+        <input type="date" class="form-control" id="inputDob" name="InputDob" required>
     </div>
 </div>
 
@@ -86,7 +86,7 @@
         <div class="col-form-label col-sm-2 pt-0">Are you local?</div>
         <div class="col-sm-1">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="isLocalCheck">
+                <input class="form-check-input" type="checkbox" id="isLocalCheck" name="IsLocalCheck">
                 <label class="form-check-label" for="isLocalCheck">
                     Yes
                 </label>

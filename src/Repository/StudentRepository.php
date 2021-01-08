@@ -9,7 +9,7 @@ class StudentRepository
 
     public function __construct()
     {
-        require __DIR__ . '\..\..\config\config.php';
+        require __DIR__ . '/../../config/config.php';
 
         if (isset($PDO)) {
             $dsn = 'mysql:host=' . $PDO['host'] . ';dbname=' . $PDO['database'] . ';charset=utf8';
@@ -37,6 +37,6 @@ class StudentRepository
         $query->bindValue('dob', $student->getDob());
         $query->bindValue('islocal', $student->getIslocal());
         $query->execute();
-        return $query->fetchColumn();
+        //return $query->fetchColumn();
     }
 }
