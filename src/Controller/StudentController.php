@@ -18,9 +18,20 @@ class StudentController
         include __DIR__ . '/../View/showStudents.html';
     }
 
+    public function registerTemplate()
+    {
+        include __DIR__ . '/../View/register.html';
+    }
+
+    public function registerHandler()
+    {
+        echo 'register handler';
+        //TODO::register handler
+    }
+
     public function create()
     {
-        echo 'func create';
+        echo 'regiser page';
         die();
         $student = new Student('john', 'miller', 'male', 15, 17, 'john@mail.com', 175, 2000, false);
 
@@ -33,5 +44,15 @@ class StudentController
 
         $StudentGateway = new StudentRepository();
         $StudentGateway->create($student);
+    }
+
+    public function remove()
+    {
+        echo 'remove page';
+    }
+
+    public function edit()
+    {
+        echo 'edit page';
     }
 }

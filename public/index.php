@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config/routers.php';
 
 $router->run();
 
-require_once __DIR__ . '/../config/config.php.php';
+require_once __DIR__ . '/../config/config.php';
 
 
 
