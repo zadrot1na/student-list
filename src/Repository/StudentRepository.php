@@ -1,41 +1,42 @@
 <?php
-
-
 namespace App\Repository;
 
 use PDO;
 
-
 class StudentRepository
 {
-    public function create(\App\Model\Student $student)
-    {
-        $connection = new \PDO('mysql:host=mysql;dbname=students;charset=utf8', 'root', 'symfony');
-        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    private $pdo;
 
-        $STH = $connection->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
+    public function __construct()
+    {
+        require __DIR__ . '\..\..\config\config.php';
+
+        if (isset($PDO)) {
+            $dsn = 'mysql:host=' . $PDO['host'] . ';dbname=' . $PDO['database'] . ';charset=utf8';
+            $this->pdo = new PDO($dsn, $PDO['user'], $PDO['password']);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+        else {
+            $this->pdo = new PDO('mysql:host=mysql;dbname=students;charset=utf8',
+                'root', 'symfony');
+        }
+    }
+
+    public function addStudent(\App\Model\Student $student)
+    {
+        $query = $this->pdo->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
                          values (:name, :surname, :gender, :age, :groupnumber, :mail, :score, :dob, :islocal)");
 
-        $name = $student->getName();
-        $surname = $student->getSurname();
-        $gender = $student->getGender();
-        $age = $student->getAge();
-        $groupnumber = $student->getGroupnumber();
-        $mail = $student->getMail();
-        $score = $student->getScore();
-        $dob = $student->getDob();
-        $islocal = $student->getIslocal();
-
-        $STH->bindParam('name', $name);
-        $STH->bindParam('surname', $surname);
-        $STH->bindParam('gender',$gender);
-        $STH->bindParam('age', $age);
-        $STH->bindParam('groupnumber',$groupnumber);
-        $STH->bindParam('mail', $mail);
-        $STH->bindParam('score',$score);
-        $STH->bindParam('dob',$dob);
-        $STH->bindParam('islocal',$islocal);
-
-        $STH->execute();
+        $query->bindValue('name', $student->getName());
+        $query->bindValue('surname', $student->getSurname());
+        $query->bindValue('gender', $student->getGender());
+        $query->bindValue('age', $student->getAge());
+        $query->bindValue('groupnumber', $student->getGroupnumber());
+        $query->bindValue('mail', $student->getMail());
+        $query->bindValue('score', $student->getScore());
+        $query->bindValue('dob', $student->getDob());
+        $query->bindValue('islocal', $student->getIslocal());
+        $query->execute();
+        return $query->fetchColumn();
     }
 }
