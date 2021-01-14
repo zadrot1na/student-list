@@ -4,6 +4,8 @@
 namespace App\Service;
 
 
+use App\Repository\StudentRepository;
+
 class SessionHandler implements \SessionHandlerInterface
 {
     private $dbGateway;
@@ -35,12 +37,21 @@ class SessionHandler implements \SessionHandlerInterface
     /**
      * @inheritDoc
      */
-    public function open($dbGateway, $name)
-    {
-        $this->dbGateway = $dbGateway;
-
-
+    public function open($pdo, $sessionId): bool
+        {
         // TODO: Implement open() method.
+        $this->dbGateway = $pdo;
+
+        $query = $this->dbGateway->prepare("
+        SELECT sessionEncoded
+        FROM students
+        WHERE sessionId = :sessionId
+        ");
+
+        $query->bindValue('sessionId', $sessionId);
+        $query->execute();
+
+        return session_decode($sessionId);
     }
 
     /**

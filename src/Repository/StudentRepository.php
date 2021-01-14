@@ -6,7 +6,7 @@ use PDO;
 
 class StudentRepository
 {
-    private $pdo;
+    private PDO $pdo;
 
     public function __construct()
     {
@@ -59,14 +59,31 @@ class StudentRepository
         return $query->fetch();
     }
 
-    public function session($session)
+    public function session($sessionId)
     {
-        $session = session_encode($session);
-        $query = $this->pdo->prepare(
-            "UPDATE students
-            SET sessionId = $session
-            WHERE 
-        
-        ")
+        $query = $this->pdo->prepare("SELECT sessionEncoded
+        FROM students
+        WHERE sessionId = :sessionId
+        ");
+
+        $query->bindValue('sessionId', $sessionId);
+
+        return session_encode($sessionId);
+    }
+
+    /**
+     * @return PDO
+     */
+    public function getPdo(): PDO
+    {
+        return $this->pdo;
+    }
+
+    /**
+     * @param PDO $pdo
+     */
+    public function setPdo(PDO $pdo): void
+    {
+        $this->pdo = $pdo;
     }
 }
