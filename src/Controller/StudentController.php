@@ -27,33 +27,11 @@ class StudentController
     {
         echo "register handler\n";
 
-        $temp = [
-            $_POST['InputName'],
-            $_POST['InputSurname'],
-            $_POST['gender'],
-            $_POST['InputAge'],
-            $_POST['InputGroupNumber'],
-            $_POST['InputMail'],
-            $_POST['InputScore'],
-            $_POST['InputDob'],
-            $_POST['IsLocalCheck']
-        ];
-
-        foreach ($temp as $value) {
+        foreach ($_POST[Student] as $value) {
             $value = trim($value);
         }
 
-        $student = new Student(
-            $temp[0],
-            $temp[1],
-            $temp[2],
-            $temp[3],
-            $temp[4],
-            $temp[5],
-            $temp[6],
-            $temp[7],
-            $temp[8]
-        );
+        $student = new Student($_POST[Student]);
         $repos = new StudentRepository();
         echo $repos->addStudent($student) . "registration successful\n";
     }
@@ -76,6 +54,16 @@ class StudentController
 //        $StudentGateway->addStudent($student);
 //    }
 
+    public function loginTemplate()
+    {
+        include __DIR__ . '/../View/login.html';
+    }
+
+    public function loginHandler()
+    {
+
+    }
+
     public function remove()
     {
         echo 'remove page';
@@ -84,5 +72,10 @@ class StudentController
     public function edit()
     {
         echo 'edit page';
+    }
+
+    public function signIn()
+    {
+
     }
 }

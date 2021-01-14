@@ -17,27 +17,20 @@ class Student
 
     /**
      * Student constructor.
-     * @param $name
-     * @param $surname
-     * @param $gender
-     * @param $age
-     * @param $groupnumber
-     * @param $mail
-     * @param $score
-     * @param $dob
-     * @param $islocal
+     *
+     * @param array $student
      */
-    public function __construct($name, $surname, $gender, $age, $groupnumber, $mail, $score, $dob, $islocal)
+    public function __construct(array $student)
     {
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->gender = $gender;
-        $this->age = $age;
-        $this->groupnumber = $groupnumber;
-        $this->mail = $mail;
-        $this->score = $score;
-        $this->dob = $dob;
-        $this->islocal = $islocal;
+        $this->name = $student['name'];
+        $this->surname = $student['surname'];
+        $this->gender = $student['gender'];
+        $this->age = $student['age'];
+        $this->groupnumber = $student['groupNumber'];
+        $this->mail = $student['mail'];
+        $this->score = $student['score'];
+        $this->dob = $student['dob'];
+        $this->islocal = $student['isLocal'];
     }
 
     /**
