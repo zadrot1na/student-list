@@ -2,6 +2,8 @@
 
 namespace App\Repository;
 
+// TODO: GENERATE PHPDOC BLOCKS, USE TYPE HINTING, REMEMBER PSR's
+// NOTICE: You always forget about using type hinting in functions and class's properties
 use PDO;
 
 class StudentRepository
@@ -59,6 +61,8 @@ class StudentRepository
         return $query->fetch();
     }
 
+    TODO: Fix it in according to new knowledge
+
     public function session($sessionId)
     {
         $query = $this->pdo->prepare("SELECT sessionEncoded
@@ -71,6 +75,7 @@ class StudentRepository
         return session_encode($sessionId);
     }
 
+    // TODO: Why these methods are public?
     /**
      * @return PDO
      */

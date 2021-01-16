@@ -1,5 +1,6 @@
 <?php
 
+//NOTICE:: The most nice done class, but it\s not finished yet, use the previous experience to do it
 
 namespace App\Service;
 
