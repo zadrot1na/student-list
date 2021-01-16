@@ -42,3 +42,12 @@ docker-compose down
 
 * https://habr.com/ru/post/208442/ - About SOLID principles, you must read it and understand and don't make such mistakes
 * https://getjump.github.io/ru-php-the-right-way/ - PHP Right way, read it and follow the practices there
+* https://svyatoslav.biz/misc/psr_translation/#_PSR-1 - PSR 1
+* https://svyatoslav.biz/misc/psr_translation/#_PSR-2 - PSR 2
+* https://pastebin.com/p6HHda6r - Пиши правильно!
+* https://gist.github.com/codedokode/8759492 - Как форматировать код
+* https://www.php-fig.org/psr/psr-12/ - PSR 12 (Extended code style)
+
+Author
+
+Qumo@Qumo
