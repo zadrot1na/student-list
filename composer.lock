@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bf60e916e21021ee76875cea410298d",
+    "content-hash": "e86422783cdb40afdf975bc9e6182655",
     "packages": [
         {
             "name": "bramus/router",
@@ -56,17 +56,65 @@
                 "source": "https://github.com/bramus/router/tree/1.5"
             },
             "time": "2020-10-26T09:50:48+00:00"
+        },
+        {
+            "name": "jamiecressey/php-mysql-session-handler",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JamieCressey/PHP-MySQL-Session-Handler.git",
+                "reference": "7b1072a56f80a1eab6678d1313ac1db4802e05dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JamieCressey/PHP-MySQL-Session-Handler/zipball/7b1072a56f80a1eab6678d1313ac1db4802e05dc",
+                "reference": "7b1072a56f80a1eab6678d1313ac1db4802e05dc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "suggest": {
+                "jamiecressey/php-mysql-pdo-database-class": "Quick and effective MySQL PDO class"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JamieCressey\\SessionHandler\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jamie Cressey",
+                    "email": "jamiecressey89@gmail.com",
+                    "homepage": "https://github.com/jamiecressey"
+                }
+            ],
+            "description": "MySQL PHP Session Handler",
+            "homepage": "http://github.com/jamiecressey/php-mysql-session-handler",
+            "keywords": [
+                "mysql",
+                "php",
+                "sessions"
+            ],
+            "time": "2015-10-07T21:00:49+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jamiecressey/php-mysql-session-handler": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "ext-pdo": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }

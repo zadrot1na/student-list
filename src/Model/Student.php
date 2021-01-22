@@ -33,7 +33,7 @@ class Student
          * ]
          **/
 
-        $this->parseConstructorArguments(array $arguments = [])
+        $this->parseConstructorArguments($arguments = []);
     }
 
     /**
@@ -43,15 +43,9 @@ class Student
      */
     public function load(array $student)
     {
-        $this->name = $student['name'];
-        $this->surname = $student['surname'];
-        $this->gender = $student['gender'];
-        $this->age = $student['age'];
-        $this->groupnumber = $student['groupNumber'];
-        $this->mail = $student['mail'];
-        $this->score = $student['score'];
-        $this->dob = $student['dob'];
-        $this->islocal = $student['isLocal'];
+        foreach ($this as $value) {
+            $value = $student["$this"];
+        }
     }
 
     /**

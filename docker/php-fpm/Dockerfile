@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y git curl wget libmcrypt-dev openssh-cli
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && docker-php-source delete \
+    && docker-php-ext-install mysqli \
     && docker-php-ext-install pdo_mysql soap intl zip \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_autostart=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \

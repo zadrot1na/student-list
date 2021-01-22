@@ -2,3 +2,5 @@ vendor/
 .history
 .idea/
 .vscode
+/public/error_l
+/error_l

@@ -61,18 +61,19 @@ class StudentRepository
         return $query->fetch();
     }
 
-    TODO: Fix it in according to new knowledge
+    //TODO: Fix it in according to new knowledge
 
-    public function session($sessionId)
+    public function getSessionEncoded($sessionId)
     {
-        $query = $this->pdo->prepare("SELECT sessionEncoded
+        $sessionEncoded = $this->pdo->prepare("
+        SELECT session
         FROM students
         WHERE sessionId = :sessionId
         ");
+        $this->pdo->bindValue(':sessionId', $sessionId);
+        $this->pdo->execute();
 
-        $query->bindValue('sessionId', $sessionId);
-
-        return session_encode($sessionId);
+        return $sessionEncoded;
     }
 
     // TODO: Why these methods are public?

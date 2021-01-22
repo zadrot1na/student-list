@@ -12,7 +12,9 @@ use PDO;
 
 class StudentController
 {
-    public function __construct() {
+
+    public function __construct()
+    {
         // TODO: Implement constructor
     }
 
@@ -45,25 +47,6 @@ class StudentController
         echo $repos->addStudent($student) . "registration successful\n";
     }
 
-    // NOTICE: It's VERY BAD PRACTICE
-//    public function create()
-//    {
-//        echo 'regiser page';
-//
-//
-//        die();
-//        $student = new Student('john', 'miller', 'male', 15, 17, 'john@mail.com', 175, 2000, false);
-//
-//        if ($_SERVER['REQUEST_METHOD'] == 'POST')
-//            echo 'NOW ITS POST';
-//        else
-//            include __DIR__ . '/../View/register.html';
-//
-//
-//        $StudentGateway = new StudentRepository();
-//        $StudentGateway->addStudent($student);
-//    }
-
     public function loginTemplate()
     {
         include __DIR__ . '/../View/login.html';
@@ -71,7 +54,6 @@ class StudentController
 
     public function loginHandler()
     {
-
     }
 
     public function remove()
@@ -86,7 +68,7 @@ class StudentController
 
     public function signIn()
     {
-        TODO: Actually it's good idea to create the independent controller for authorization
+       // TODO: it's good idea to create the independent controller for authorization
         
         # some code goes here and make brrhrhrr
     }
