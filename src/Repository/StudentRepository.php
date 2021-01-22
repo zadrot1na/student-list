@@ -8,7 +8,7 @@ use PDO;
 
 class StudentRepository
 {
-    private PDO $pdo;
+    private $pdo;
 
     public function __construct()
     {
@@ -26,7 +26,7 @@ class StudentRepository
         }
     }
 
-    public function addStudent(\App\Model\Student $student)
+    public function addStudent(\App\Model\Student $student): string
     {
         $query = $this->pdo->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
                          values (:name, :surname, :gender, :age, :groupnumber, :mail, :score, :dob, :islocal)");
@@ -47,16 +47,23 @@ class StudentRepository
 
     public function find($search = '')
     {
-        $query = $this->pdo->prepare(
-            "SELECT * FROM students 
-            WHERE name LIKE '%:search%'
-            OR surname LIKE '%:search%'
-            OR groupnumber LIKE '%:search%'
-            OR dob LIKE '%:search%'"
-        );
+        $query = '';
+        if ($search === '') {
+            $query = $this->pdo->prepare(
+                "SELECT * FROM students"
+            );
+        } else {
+            $query = $this->pdo->prepare(
+                "SELECT * FROM students 
+            WHERE name LIKE '%search%'
+            OR surname LIKE '%search%'
+            OR groupnumber LIKE '%search%'
+            OR dob LIKE '%search%'"
+            );
+            $query->bindValue('search', $search);
+        }
         $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,
-            'Student');
-        $query->bindValue('search', $search);
+            "Student");
 
         return $query->fetch();
     }
@@ -77,6 +84,7 @@ class StudentRepository
     }
 
     // TODO: Why these methods are public?
+
     /**
      * @return PDO
      */

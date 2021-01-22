@@ -10,16 +10,24 @@
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 </head>
 <body>
-    <form action="/login" method="post" id="loginForm">
+<form action="/login" method="post" id="loginForm">
 
-        <!--mail--> <div class="row mb-3">
-        <label for="InputMail" class="col-sm-2 col-form-label">Mail</label>
-        <div class="col-sm-5">
-            <input type="email" class="form-control" id="InputMail" name="InputMail">
+    <!--login-->
+    <div class="row mb-3">
+        <label for="InputLogin" class="col-sm-1 col-form-label">User</label>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="InputLogin" name="InputLogin">
+        </div>
+        <!--pass-->
+        <div class="row mb-3">
+            <label for="InputPass" class="col-sm-1 col-form-label">Pass</label>
+            <div class="col-sm-2">
+                <input type="password" class="form-control" id="InputPass" name="InputPass">
+            </div>
         </div>
     </div>
+    <button type="submit" class="btn btn-success">Login</button>
 
-        <button type="submit" class="btn btn-success">Login</button>
-    </form>
+</form>
 </body>
 </html>
