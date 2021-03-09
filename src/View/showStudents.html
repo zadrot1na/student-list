@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Students list</title>
@@ -9,11 +10,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 </head>
+
 <body>
 <div class="container">
-            <a class="btn btn-primary btn-lg" href="register" role="button">Add</a>
-            <a class="btn btn-primary btn-lg" href="remove" role="button">Remove</a>
-            <a class="btn btn-primary btn-lg" href="edit" role="button">Edit</a>
+    <a class="btn btn-primary btn-lg" href="register" role="button">Add</a>
+    <a class="btn btn-primary btn-lg" href="remove" role="button">Remove</a>
+    <a class="btn btn-primary btn-lg" href="edit" role="button">Edit</a>
 </div>
 <table class="table">
     <thead>
@@ -27,12 +29,12 @@
     <tbody>
     <?php
     if (isset($students)) {
-        foreach($students as $row) {
+        foreach($students as $student) {
             echo "<tr>
-    <td scope='col'>$row[name]</td>
-    <td scope='col'>$row[surname]</td>
-    <td scope='col'>$row[groupnumber]</td>
-    <td scope='col'>$row[score]</td>
+    <td scope='col'>$student->getName()</td>
+    <td scope='col'>$student->getSurname()</td>
+    <td scope='col'>$student->getGroupnumber()</td>
+    <td scope='col'>$student->getScore()</td>
     </tr>";
     }
     }
@@ -41,4 +43,5 @@
 </table>
 
 </body>
+
 </html>

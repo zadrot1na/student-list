@@ -2,11 +2,13 @@
 
 namespace App\Repository;
 
+// TODO: GENERATE PHPDOC BLOCKS, USE TYPE HINTING, REMEMBER PSR's
+// NOTICE: You always forget about using type hinting in functions and class's properties
 use PDO;
 
 class StudentRepository
 {
-    private PDO $pdo;
+    private $pdo;
 
     public function __construct()
     {
@@ -24,7 +26,7 @@ class StudentRepository
         }
     }
 
-    public function addStudent(\App\Model\Student $student)
+    public function addStudent(\App\Model\Student $student): string
     {
         $query = $this->pdo->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
                          values (:name, :surname, :gender, :age, :groupnumber, :mail, :score, :dob, :islocal)");
@@ -45,31 +47,43 @@ class StudentRepository
 
     public function find($search = '')
     {
-        $query = $this->pdo->prepare(
-            "SELECT * FROM students 
-            WHERE name LIKE '%:search%'
-            OR surname LIKE '%:search%'
-            OR groupnumber LIKE '%:search%'
-            OR dob LIKE '%:search%'"
-        );
+        $query = '';
+        if ($search === '') {
+            $query = $this->pdo->prepare(
+                "SELECT * FROM students"
+            );
+        } else {
+            $query = $this->pdo->prepare(
+                "SELECT * FROM students 
+            WHERE name LIKE '%search%'
+            OR surname LIKE '%search%'
+            OR groupnumber LIKE '%search%'
+            OR dob LIKE '%search%'"
+            );
+            $query->bindValue('search', $search);
+        }
         $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,
-            'Student');
-        $query->bindValue('search', $search);
+            "Student");
 
         return $query->fetch();
     }
 
-    public function session($sessionId)
+    //TODO: Fix it in according to new knowledge
+
+    public function getSessionEncoded($sessionId)
     {
-        $query = $this->pdo->prepare("SELECT sessionEncoded
+        $sessionEncoded = $this->pdo->prepare("
+        SELECT session
         FROM students
         WHERE sessionId = :sessionId
         ");
+        $this->pdo->bindValue(':sessionId', $sessionId);
+        $this->pdo->execute();
 
-        $query->bindValue('sessionId', $sessionId);
-
-        return session_encode($sessionId);
+        return $sessionEncoded;
     }
+
+    // TODO: Why these methods are public?
 
     /**
      * @return PDO
