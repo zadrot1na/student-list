@@ -1,19 +1,25 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
-$handler = new \JamieCressey\SessionHandler\SessionHandler();
-$handler->setDbDetails('mysql','root','symfony','students');
-$handler->setDbTable('sessions');
+
+use Bramus\Router\Router;
+use JamieCressey\SessionHandler\SessionHandler;
+
+$router = new Router();
+$handler = new SessionHandler();
+
+//$mysqli = new mysqli
+
+$handler->setDbDetails('localhost', 'root', '', 'students');
+$handler->setDbTable('students_list');
 session_set_save_handler($handler, true);
 
 
-$router = new \Bramus\Router\Router();
 require_once __DIR__ . '/../config/routers.php';
+$router->run();
 
 require_once __DIR__ . '/../config/config.php';
 
-
-session_start([]);
-$router->run();
+session_start();
 
 
 

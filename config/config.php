@@ -1,8 +1,8 @@
 <?php
 
 $PDO = [
-    'host' => 'mysql',
+    'host' => 'localhost',
     'database' => 'students',
     'user' => 'root',
-    'password' => 'symfony'
+    'password' => ''
 ];

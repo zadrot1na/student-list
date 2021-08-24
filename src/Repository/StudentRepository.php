@@ -5,11 +5,23 @@ namespace App\Repository;
 // TODO: GENERATE PHPDOC BLOCKS, USE TYPE HINTING, REMEMBER PSR's
 // NOTICE: You always forget about using type hinting in functions and class's properties
 use PDO;
+use PDOStatement;
 
+/**
+ * Class StudentRepository
+ * @package App\Repository
+ */
 class StudentRepository
 {
+    /**
+     * @var PDO
+     */
     private $pdo;
 
+    /**
+     * StudentRepository constructor.
+     *
+     */
     public function __construct()
     {
         require __DIR__ . '/../../config/config.php';
@@ -26,7 +38,11 @@ class StudentRepository
         }
     }
 
-    public function addStudent(\App\Model\Student $student): string
+    /**
+     * @param \App\Model\Student $student
+     * @return string
+     */
+    public function addStudent(\App\Model\Student $student)
     {
         $query = $this->pdo->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
                          values (:name, :surname, :gender, :age, :groupnumber, :mail, :score, :dob, :islocal)");
@@ -45,6 +61,10 @@ class StudentRepository
         return $this->pdo->lastInsertId();
     }
 
+    /**
+     * @param string $search
+     * @return mixed
+     */
     public function find($search = '')
     {
         $query = '';
@@ -70,7 +90,11 @@ class StudentRepository
 
     //TODO: Fix it in according to new knowledge
 
-    public function getSessionEncoded($sessionId)
+    /**
+     * @param $sessionId
+     * @return bool | PDOStatement
+     */
+    private function getSessionEncoded($sessionId)
     {
         $sessionEncoded = $this->pdo->prepare("
         SELECT session
@@ -88,7 +112,7 @@ class StudentRepository
     /**
      * @return PDO
      */
-    public function getPdo(): PDO
+    private function getPdo()
     {
         return $this->pdo;
     }
@@ -96,7 +120,7 @@ class StudentRepository
     /**
      * @param PDO $pdo
      */
-    public function setPdo(PDO $pdo): void
+    public function setPdo(PDO $pdo)
     {
         $this->pdo = $pdo;
     }

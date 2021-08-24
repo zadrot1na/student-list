@@ -8,15 +8,28 @@ namespace App\Controller;
 
 use App\Repository\StudentRepository;
 
+/**
+ * Class StudentController
+ * @package App\Controller
+ */
 class StudentController
 {
+    /**
+     * @var StudentRepository
+     */
     private $studentRepository;
 
+    /**
+     * StudentController constructor.
+     */
     public function __construct()
     {
         $this->studentRepository = new StudentRepository();
     }
 
+    /**
+     *
+     */
     public function showStudents()
     {
 
@@ -27,21 +40,29 @@ class StudentController
         include __DIR__ . '/../View/showStudents.html';
     }
 
-
+    /**
+     *
+     */
     public function remove()
     {
         echo 'remove page';
     }
 
+    /**
+     *
+     */
     public function edit()
     {
         echo 'edit page';
     }
 
+    /**
+     *
+     */
     public function signIn()
     {
-       // TODO: it's good idea to create the independent controller for authorization
-        
+        // TODO: it's good idea to create the independent controller for authorization
+
         # some code goes here and make brrhrhrr
     }
 }

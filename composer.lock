@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e86422783cdb40afdf975bc9e6182655",
+    "content-hash": "07e44f065a2086cdbe4ee55cab00be63",
     "packages": [
         {
             "name": "bramus/router",
-            "version": "1.5",
+            "version": "1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bramus/router.git",
-                "reference": "6adc0182dc6b0ebc22fd10543f65a36de10d8c05"
+                "reference": "d2cf97d5c471e272ac5a2a88b652bc75089c8ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bramus/router/zipball/6adc0182dc6b0ebc22fd10543f65a36de10d8c05",
-                "reference": "6adc0182dc6b0ebc22fd10543f65a36de10d8c05",
+                "url": "https://api.github.com/repos/bramus/router/zipball/d2cf97d5c471e272ac5a2a88b652bc75089c8ae3",
+                "reference": "d2cf97d5c471e272ac5a2a88b652bc75089c8ae3",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "~2.14",
                 "phpunit/php-code-coverage": "~2.0",
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
             "autoload": {
@@ -53,9 +53,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bramus/router/issues",
-                "source": "https://github.com/bramus/router/tree/1.5"
+                "source": "https://github.com/bramus/router/tree/1.6"
             },
-            "time": "2020-10-26T09:50:48+00:00"
+            "time": "2021-07-23T09:48:14+00:00"
         },
         {
             "name": "jamiecressey/php-mysql-session-handler",
@@ -77,6 +77,7 @@
             "suggest": {
                 "jamiecressey/php-mysql-pdo-database-class": "Quick and effective MySQL PDO class"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -101,6 +102,10 @@
                 "php",
                 "sessions"
             ],
+            "support": {
+                "issues": "https://github.com/JamieCressey/PHP-MySQL-Session-Handler/issues",
+                "source": "https://github.com/JamieCressey/PHP-MySQL-Session-Handler/tree/master"
+            },
             "time": "2015-10-07T21:00:49+00:00"
         }
     ],
@@ -113,8 +118,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-mysqli": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.1.0"
 }

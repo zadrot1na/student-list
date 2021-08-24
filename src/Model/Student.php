@@ -4,6 +4,10 @@ namespace App\Model;
 
 // TODO: GENERATE PHPDOC BLOCKS, USE TYPE HINTING, REMEMBER PSR's
 
+/**
+ * Class Student
+ * @package App\Model
+ */
 class Student
 {
     private $name;
@@ -19,7 +23,11 @@ class Student
 
     // NOTICE: not forgot about type hinting and use it where you only can
 
-    public function __construct($argc)
+    /**
+     * Student constructor.
+     * @param $argc
+     */
+    public function __construct($argc = [])
     {
         // TODO: Create and implement function parseConstructorArguments
         // TODO: Create a basic class called model where you'll move everything the same for all classes
@@ -33,7 +41,7 @@ class Student
          * ]
          **/
 
-        $this->parseConstructorArguments($arguments = []);
+        $this->parseConstructorArguments($argc = []);
     }
 
     /**
@@ -118,6 +126,10 @@ class Student
     public function getIslocal()
     {
         return $this->islocal;
+    }
+
+    private function parseConstructorArguments(array $param)
+    {
     }
 
 

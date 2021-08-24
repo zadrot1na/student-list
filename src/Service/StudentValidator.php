@@ -4,13 +4,22 @@
 
 use App\Model\Student;
 
+/**
+ * Class StudentValidator
+ */
 class StudentValidator {
 
+    /**
+     * StudentValidator constructor.
+     */
     public function __construct()
     {
         // studentvalidator constructor here
     }
 
+    /**
+     *
+     */
     public function validate()
     {
         // here must be validation logic

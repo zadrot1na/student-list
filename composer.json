@@ -10,7 +10,8 @@
     "require": {
         "bramus/router": "~1.4",
         "ext-pdo": "*",
-        "jamiecressey/php-mysql-session-handler": "dev-master"
+        "jamiecressey/php-mysql-session-handler": "dev-master",
+      "ext-mysqli": "*"
     },
     "autoload": {
         "psr-4": {
