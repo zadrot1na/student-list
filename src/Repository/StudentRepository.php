@@ -2,8 +2,7 @@
 
 namespace App\Repository;
 
-// TODO: GENERATE PHPDOC BLOCKS, USE TYPE HINTING, REMEMBER PSR's
-// NOTICE: You always forget about using type hinting in functions and class's properties
+use App\Model\Student;
 use PDO;
 use PDOStatement;
 
@@ -16,35 +15,29 @@ class StudentRepository
     /**
      * @var PDO
      */
-    private $pdo;
+    private PDO $pdo;
 
     /**
      * StudentRepository constructor.
      *
      */
-    public function __construct()
+    public function __construct(PDO $pdo = null)// TODO: check this
     {
-        require __DIR__ . '/../../config/config.php';
-
-        if (isset($PDO)) {
-            $dsn = 'mysql:host=' . $PDO['host'] . ';dbname=' . $PDO['database']
-                . ';charset=utf8';
-            $this->pdo = new PDO($dsn, $PDO['user'], $PDO['password']);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } else {
-            $this->pdo
-                = new PDO('mysql:host=mysql;dbname=students;charset=utf8',
-                'root', 'symfony');
-        }
+       /* if (!empty($pdo)) {
+            $this->pdo = new PDO('mysql:host=localhost;dbname=students_list;charset=utf8', 'root', '');
+        }*/
+        $this->pdo = $pdo;
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     /**
-     * @param \App\Model\Student $student
+     * @param Student $student
      * @return string
      */
-    public function addStudent(\App\Model\Student $student)
+    public
+    function addStudent(Student $student): string
     {
-        $query = $this->pdo->prepare("INSERT INTO students (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
+        $query = $this->pdo->prepare("INSERT INTO students_list (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
                          values (:name, :surname, :gender, :age, :groupnumber, :mail, :score, :dob, :islocal)");
 
         $query->bindValue('name', $student->getName());
@@ -65,16 +58,16 @@ class StudentRepository
      * @param string $search
      * @return mixed
      */
-    public function find($search = '')
+    public
+    function find(string $search = ''): mixed
     {
-        $query = '';
         if ($search === '') {
             $query = $this->pdo->prepare(
-                "SELECT * FROM students"
+                "SELECT * FROM students_list"
             );
         } else {
             $query = $this->pdo->prepare(
-                "SELECT * FROM students 
+                "SELECT * FROM students_list 
             WHERE name LIKE '%search%'
             OR surname LIKE '%search%'
             OR groupnumber LIKE '%search%'
@@ -88,13 +81,12 @@ class StudentRepository
         return $query->fetch();
     }
 
-    //TODO: Fix it in according to new knowledge
-
     /**
-     * @param $sessionId
+     * @param string $sessionId
      * @return bool | PDOStatement
      */
-    private function getSessionEncoded($sessionId)
+    public
+    function getSessionEncoded(string $sessionId): bool|PDOStatement
     {
         $sessionEncoded = $this->pdo->prepare("
         SELECT session
@@ -107,21 +99,12 @@ class StudentRepository
         return $sessionEncoded;
     }
 
-    // TODO: Why these methods are public?
-
     /**
      * @return PDO
      */
-    private function getPdo()
+    public
+    function getPdo(): PDO
     {
         return $this->pdo;
-    }
-
-    /**
-     * @param PDO $pdo
-     */
-    public function setPdo(PDO $pdo)
-    {
-        $this->pdo = $pdo;
     }
 }

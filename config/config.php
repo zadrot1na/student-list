@@ -1,8 +1,8 @@
 <?php
-
 $PDO = [
     'host' => 'localhost',
-    'database' => 'students',
+    'dbname' => 'students',
+    'table' => 'students_list',
     'user' => 'root',
     'password' => ''
 ];

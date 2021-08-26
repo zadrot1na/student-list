@@ -2,6 +2,7 @@
 
 //$router->setNamespace('\App\Controller');
 
+/** @var Bramus\Router\Router $router */
 $router->get('/', '\App\Controller\StudentController@showStudents');
 $router->get('/register', '\App\Controller\AuthController@registerTemplate');
 $router->post('/register', '\App\Controller\AuthController@registerHandler');
