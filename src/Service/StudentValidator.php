@@ -29,6 +29,5 @@ class StudentValidator {
                 $values['name'] = array_key_exists('InputName', $_POST) ? strval($_POST['InputName']) : '';
             $values['surname'] = array_key_exists('InputSurname', $_POST) ? strval($_POST['InputSurname']) : '';
         }
-
     }
 }

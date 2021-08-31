@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Repository;
 
-use App\Model\Student;
 use PDO;
 use PDOStatement;
+
 
 /**
  * Class StudentRepository
@@ -21,11 +20,11 @@ class StudentRepository
      * StudentRepository constructor.
      *
      */
-    public function __construct(PDO $pdo = null)// TODO: check this
+    public function __construct(PDO $pdo)// TODO: check this
     {
-       /* if (!empty($pdo)) {
-            $this->pdo = new PDO('mysql:host=localhost;dbname=students_list;charset=utf8', 'root', '');
-        }*/
+        /* if (!empty($pdo)) {
+             $this->pdo = new PDO('mysql:host=localhost;dbname=students_list;charset=utf8', 'root', '');
+         }*/
         $this->pdo = $pdo;
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
@@ -34,8 +33,7 @@ class StudentRepository
      * @param Student $student
      * @return string
      */
-    public
-    function addStudent(Student $student): string
+    public function addStudent(Student $student): string
     {
         $query = $this->pdo->prepare("INSERT INTO students_list (name, surname, gender, age, groupnumber, mail, score, dob, islocal) 
                          values (:name, :surname, :gender, :age, :groupnumber, :mail, :score, :dob, :islocal)");
@@ -58,10 +56,9 @@ class StudentRepository
      * @param string $search
      * @return mixed
      */
-    public
-    function find(string $search = ''): mixed
+    public function find(string $search = null): mixed
     {
-        if ($search === '') {
+        if ($search == null) {
             $query = $this->pdo->prepare(
                 "SELECT * FROM students_list"
             );
@@ -76,17 +73,16 @@ class StudentRepository
             $query->bindValue('search', $search);
         }
         $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,
-            "Student");
+            "\App\Model\Student");
 
-        return $query->fetch();
+        return $query->fetch(PDO::FETCH_CLASS);
     }
 
     /**
      * @param string $sessionId
      * @return bool | PDOStatement
      */
-    public
-    function getSessionEncoded(string $sessionId): bool|PDOStatement
+    /*public function getSessionEncoded(string $sessionId): bool|PDOStatement
     {
         $sessionEncoded = $this->pdo->prepare("
         SELECT session
@@ -97,13 +93,12 @@ class StudentRepository
         $this->pdo->execute();
 
         return $sessionEncoded;
-    }
+    }*/
 
     /**
      * @return PDO
      */
-    public
-    function getPdo(): PDO
+    public function getPdo(): PDO
     {
         return $this->pdo;
     }

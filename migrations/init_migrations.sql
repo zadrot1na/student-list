@@ -14,3 +14,27 @@ CREATE TABLE `students`(
                            CONSTRAINT `unique_id` UNIQUE( `id` ) )
     ENGINE = InnoDB;
 -- -------------------------------------------------------------
+
+
+/* NEW TABLE*/
+create table students_list
+(
+    name        varchar(255)  not null,
+    surname     varchar(255)  not null,
+    gender      varchar(255)  not null,
+    age         tinyint(255)  not null,
+    groupnumber varchar(255)  not null,
+    mail        varchar(255)  not null,
+    score       smallint(255) not null,
+    dob         date          not null,
+    islocal     bit           not null,
+    id          int auto_increment,
+    constraint unique_id
+        unique (id),
+    constraint unique_mail
+        unique (mail)
+);
+
+alter table students_list
+    add primary key (id);
+

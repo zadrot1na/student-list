@@ -21,13 +21,11 @@ class Student
     private $islocal;
     private $id;
 
-    // NOTICE: not forgot about type hinting and use it where you only can
-
     /**
      * Student constructor.
-     * @param $argc
+     * @param array|null $argc
      */
-    public function __construct($argc = [])
+    public function __construct(array $argc = null)
     {
         // TODO: Create and implement function parseConstructorArguments
         // TODO: Create a basic class called model where you'll move everything the same for all classes
@@ -40,8 +38,27 @@ class Student
          *      'mail' => 'qumo@gmail.com'
          * ]
          **/
+        if (!isset($argc)) {
+            $this->parseConstructorArguments($argc);
+        }
 
-        $this->parseConstructorArguments($argc = []);
+    }
+
+    /**
+     * @param array $param
+     */
+    private function parseConstructorArguments(array $param)
+    {
+        $this->name = $param['name'];
+        $this->surname = $param['surname'];
+        $this->gender = $param['gender'];
+        $this->age = $param['age'];
+        $this->groupnumber = $param['groupnumber'];
+        $this->mail = $param['mail'];
+        $this->score = $param['score'];
+        $this->dob = $param['dob'];
+        $this->islocal = $param['islocal'];
+
     }
 
     /**
@@ -126,10 +143,6 @@ class Student
     public function getIslocal()
     {
         return $this->islocal;
-    }
-
-    private function parseConstructorArguments(array $param)
-    {
     }
 
 
