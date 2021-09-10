@@ -15,7 +15,8 @@ class AuthController
      */
     public function registerTemplate()
     {
-        include __DIR__ . '/../View/register.html';
+        echo "registerTemplate";
+        require __DIR__ . '/../View/register.html';
     }
 
     /**

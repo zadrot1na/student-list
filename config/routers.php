@@ -1,14 +1,13 @@
 <?php
-
-//$router->setNamespace('\App\Controller');
-
 /** @var Bramus\Router\Router $router */
-$router->get('/', '\App\Controller\StudentController@showStudents');
-$router->get('/register', '\App\Controller\AuthController@registerTemplate');
-$router->post('/register', '\App\Controller\AuthController@registerHandler');
-$router->get('/login', '\App\Controller\AuthController@loginTemplate');
-$router->post('/login', '\App\Controller\AuthController@loginHandler');
-$router->get('/remove','\App\Controller\StudentController@remove');
-$router->get('/edit','\App\Controller\StudentController@edit');
+$router->setNamespace('\App\Controller');
+
+$router->get('/', 'StudentController@showStudents');
+$router->get('/register', 'AuthController@registerTemplate');
+$router->post('/register', 'AuthController@registerHandler');
+$router->get('/login', 'AuthController@loginTemplate');
+$router->post('/login', 'AuthController@loginHandler');
+$router->get('/remove','StudentController@remove');
+$router->get('/edit','StudentController@edit');
 
 //$router->match('GET|POST', '/register.html', '\App\Controller\StudentController@create');

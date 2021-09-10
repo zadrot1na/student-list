@@ -1,20 +1,3 @@
--- CREATE TABLE "students" -------------------------------------
-CREATE TABLE `students`(
-                           `name` VarChar( 255 ) NOT NULL,
-                           `surname` VarChar( 255 ) NOT NULL,
-                           `gender` VarChar( 255 ) NOT NULL,
-                           `age` TinyInt( 255 ) NOT NULL,
-                           `groupnumber` VarChar( 255 ) NOT NULL,
-                           `mail` VarChar( 255 ) NOT NULL,
-                           `score` Smallint( 255 ) NOT NULL,
-                           `dob` VarChar (255) NOT NULL,
-                           `islocal` TinyInt NOT NULL,
-                           `id` Int AUTO_INCREMENT NULL,
-                           CONSTRAINT `unique_mail` UNIQUE( `mail` ),
-                           CONSTRAINT `unique_id` UNIQUE( `id` ) )
-    ENGINE = InnoDB;
--- -------------------------------------------------------------
-
 
 /* NEW TABLE*/
 create table students_list
@@ -37,4 +20,20 @@ create table students_list
 
 alter table students_list
     add primary key (id);
+
+
+CREATE TABLE IF NOT EXISTS `sessions`
+(
+    id        int auto_increment
+        primary key,
+    timestamp int unsigned null,
+    data      mediumtext   null,
+    StudentId int          null,
+    constraint sessions_students_list_StudentId_fk
+        foreign key (StudentId) references students_list (StudentId)
+            on delete cascade
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create index timestamp
+    on sessions (timestamp);
 

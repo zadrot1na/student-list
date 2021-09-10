@@ -16,15 +16,15 @@ $handler->setDbTable($PDO['table']);
 session_set_save_handler($handler, true);
 
 $router = new Router();
-require_once __DIR__ . '/../config/routers.php';
+require __DIR__ . '/../config/routers.php';
 
 
 
 $router->run();
+var_dump($_SERVER['REQUEST_URI']);
 
 
-
-session_start();
+//session_start();
 
 
 
