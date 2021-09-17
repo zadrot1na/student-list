@@ -36,7 +36,6 @@ class StudentController // TODO: This class
     public function showStudents()
     {
         $students = $this->repository->find();
-
         require __DIR__ . '/../View/showStudents.html';
     }
 

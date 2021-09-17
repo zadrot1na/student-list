@@ -4,6 +4,7 @@ require __DIR__ . '/../config/config.php';
 
 use Bramus\Router\Router;
 use JamieCressey\SessionHandler\SessionHandler;
+use App\Controller;
 
 $handler = new SessionHandler();
 
@@ -21,7 +22,7 @@ require __DIR__ . '/../config/routers.php';
 
 
 $router->run();
-var_dump($_SERVER['REQUEST_URI']);
+
 
 
 //session_start();
