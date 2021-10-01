@@ -13,7 +13,7 @@ $handler = new SessionHandler();
 /** @var string $PDO */
 //$dbConfig = $PDO;
 $handler->setDbDetails($PDO['host'], $PDO['user'], $PDO['password'], $PDO['dbname']);
-$handler->setDbTable($PDO['table']);
+$handler->setDbTable('sessions');
 session_set_save_handler($handler, true);
 
 $router = new Router();

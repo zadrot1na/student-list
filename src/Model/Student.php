@@ -10,16 +10,47 @@ namespace App\Model;
  */
 class Student
 {
-    private $name;
-    private $surname;
-    private $gender;
-    private $age;
-    private $groupnumber;
-    private $mail;
-    private $score;
-    private $dob;
-    private $islocal;
-    private $id;
+
+    /**
+     * @var string
+     */
+    private string $name;
+    /**
+     * @var string
+     */
+    private string $surname;
+    /**
+     * @var string
+     */
+    private string $gender;
+    /**
+     * @var int
+     */
+    private int $age;
+    /**
+     * @var string
+     */
+    private string $groupnumber;
+    /**
+     * @var string
+     */
+    private string $mail;
+    /**
+     * @var int
+     */
+    private int $score;
+    /**
+     * @var string
+     */
+    private string $dob;
+    /**
+     * @var bool
+     */
+    private bool $islocal;
+    /**
+     * @var int
+     */
+    private int $id;
 
     /**
      * Student constructor.
@@ -74,17 +105,17 @@ class Student
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getName()
+    public function getName():string
     {
         return $this->name;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getSurname()
+    public function getSurname():string
     {
         return $this->surname;
     }
@@ -92,45 +123,45 @@ class Student
     /**
      * @return mixed
      */
-    public function getGender()
+    public function getGender():string
     {
         return $this->gender;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getAge()
+    public function getAge():int
     {
         return $this->age;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getGroupnumber()
+    public function getGroupnumber():string
     {
         return $this->groupnumber;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getMail()
+    public function getMail():string
     {
         return $this->mail;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getScore()
+    public function getScore():int
     {
         return $this->score;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDob()
     {
@@ -138,9 +169,9 @@ class Student
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
-    public function getIslocal()
+    public function getIslocal(): bool
     {
         return $this->islocal;
     }

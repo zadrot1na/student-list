@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repository;
 
 use PDO;
@@ -58,26 +59,33 @@ class StudentRepository
      */
     public function find(string $search = null): mixed
     {
+        echo 'find func';
         if ($search == null) {
             $query = $this->pdo->prepare(
                 "SELECT * FROM students_list"
-            );
+            ); //TODO:Check connection to db
+
         } else {
             $query = $this->pdo->prepare(
                 "SELECT * FROM students_list 
-            WHERE name LIKE '%search%'
-            OR surname LIKE '%search%'
-            OR groupnumber LIKE '%search%'
-            OR dob LIKE '%search%'"
+            WHERE name LIKE ':search'
+            OR surname LIKE ':search'
+            OR groupnumber LIKE ':search'
+            OR dob LIKE ':search:'"
             );
-            $query->bindValue('search', $search);
+            $query->bindValue(':search', $search);
         }
-        $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,
-            "\App\Model\Student");
 
-        return $query->fetch(PDO::FETCH_CLASS);
+
+       /* $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,
+            "App\Model\Student");*/
+   //   $query->execute();
+
+       $tmp = $query->fetch();
+        var_dump($tmp);
+
+        return $tmp;
     }
-
     /**
      * @param string $sessionId
      * @return bool | PDOStatement
@@ -98,7 +106,8 @@ class StudentRepository
     /**
      * @return PDO
      */
-    public function getPdo(): PDO
+    public
+    function getPdo(): PDO
     {
         return $this->pdo;
     }
