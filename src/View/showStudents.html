@@ -17,30 +17,15 @@
     <a class="btn btn-primary btn-lg" href="remove" role="button">Remove</a>
     <a class="btn btn-primary btn-lg" href="edit" role="button">Edit</a>
 </div>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">Имя</th>
-        <th scope="col">Фамилия</th>
-        <th scope="col">Номер группы</th>
-        <th scope="col">Баллов</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!--<?php
-    if (isset($students)) {
-        foreach($students as $student) {
-            echo "<tr>
-    <td scope='col'>$student->getName()</td>
-    <td scope='col'>$student->getSurname()</td>
-    <td scope='col'>$student->getGroupnumber()</td>
-    <td scope='col'>$student->getScore()</td>
-    </tr>";
-    }
-    }
-    ?>-->
-    </tbody>
+<table class="table"><thead><tr><th scope="col">Имя</th><th scope="col">Фамилия</th><th scope="col">Номер группы</th><th scope="col">Баллов</th></tr></thead><tbody>
+<?php
+foreach($students as $student) {
+echo "<tr><td>$student[name]</td><td>$student[surname]</td><td>$student[groupnumber]</td><td>$student[score]</td></tr>";
+}
+?>
+</tbody>
 </table>
+
 
 </body>
 

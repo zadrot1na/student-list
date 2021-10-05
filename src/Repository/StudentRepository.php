@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Model\Student;
 use PDO;
 use PDOStatement;
 
@@ -54,37 +55,28 @@ class StudentRepository
     }
 
     /**
-     * @param string $search
-     * @return mixed
+     * @return array
      */
-    public function find(string $search = null): mixed
+    public function showAll(): array
     {
-        echo 'find func';
-        if ($search == null) {
-            $query = $this->pdo->prepare(
-                "SELECT * FROM students_list"
-            ); //TODO:Check connection to db
+        $query = $this->pdo->prepare(
+            "SELECT name, surname, groupnumber, score FROM students.students_list"
+        );
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $query->execute();
+        $query->setFetchMode(PDO::FETCH_ASSOC);
 
-        } else {
-            $query = $this->pdo->prepare(
-                "SELECT * FROM students_list 
-            WHERE name LIKE ':search'
-            OR surname LIKE ':search'
-            OR groupnumber LIKE ':search'
-            OR dob LIKE ':search:'"
-            );
-            $query->bindValue(':search', $search);
-        }
-
-
-       /* $query->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE,
-            "App\Model\Student");*/
-   //   $query->execute();
-
-       $tmp = $query->fetch();
-        var_dump($tmp);
-
-        return $tmp;
+        return $query->fetchAll();
+        /*    else {
+               $query = $this->pdo->prepare(
+                   "SELECT * FROM students.students_list
+               WHERE name LIKE ':search'
+               OR surname LIKE ':search'
+               OR groupnumber LIKE ':search'
+               OR dob LIKE ':search:'"
+               );
+               $query->bindValue(':search', $search);
+           }*/
     }
     /**
      * @param string $sessionId

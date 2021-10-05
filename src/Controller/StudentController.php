@@ -35,7 +35,7 @@ class StudentController // TODO: This class
      */
     public function showStudents()
     {
-        $students = $this->repository->find();
+        $students = $this->repository->showAll();
         require __DIR__ . '/../View/showStudents.html';
     }
 

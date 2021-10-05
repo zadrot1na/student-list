@@ -10,7 +10,10 @@ namespace App\Model;
  */
 class Student
 {
-
+    /**
+     * @var int
+     */
+    private int $StudentId;
     /**
      * @var string
      */
@@ -47,10 +50,7 @@ class Student
      * @var bool
      */
     private bool $islocal;
-    /**
-     * @var int
-     */
-    private int $id;
+
 
     /**
      * Student constructor.
@@ -69,7 +69,7 @@ class Student
          *      'mail' => 'qumo@gmail.com'
          * ]
          **/
-        if (!isset($argc)) {
+        if (isset($argc)) {
             $this->parseConstructorArguments($argc);
         }
 
@@ -89,7 +89,6 @@ class Student
         $this->score = $param['score'];
         $this->dob = $param['dob'];
         $this->islocal = $param['islocal'];
-
     }
 
     /**
@@ -105,9 +104,17 @@ class Student
     }
 
     /**
+     * @return int
+     */
+    public function getStudentId(): int
+    {
+        return $this->StudentId;
+    }
+
+    /**
      * @return string
      */
-    public function getName():string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -115,7 +122,7 @@ class Student
     /**
      * @return string
      */
-    public function getSurname():string
+    public function getSurname(): string
     {
         return $this->surname;
     }
@@ -123,7 +130,7 @@ class Student
     /**
      * @return mixed
      */
-    public function getGender():string
+    public function getGender(): string
     {
         return $this->gender;
     }
@@ -131,7 +138,7 @@ class Student
     /**
      * @return int
      */
-    public function getAge():int
+    public function getAge(): int
     {
         return $this->age;
     }
@@ -139,7 +146,7 @@ class Student
     /**
      * @return string
      */
-    public function getGroupnumber():string
+    public function getGroupnumber(): string
     {
         return $this->groupnumber;
     }
@@ -147,7 +154,7 @@ class Student
     /**
      * @return string
      */
-    public function getMail():string
+    public function getMail(): string
     {
         return $this->mail;
     }
@@ -155,7 +162,7 @@ class Student
     /**
      * @return int
      */
-    public function getScore():int
+    public function getScore(): int
     {
         return $this->score;
     }
