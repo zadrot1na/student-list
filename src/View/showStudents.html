@@ -1,3 +1,5 @@
+<!--TODO: HTML templates-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,19 +14,56 @@
 </head>
 
 <body>
+
 <div class="container">
-    <a class="btn btn-primary btn-lg" href="register" role="button">Add</a>
-    <a class="btn btn-primary btn-lg" href="remove" role="button">Remove</a>
-    <a class="btn btn-primary btn-lg" href="edit" role="button">Edit</a>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/public" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <span class="h3">Simple header</span>
+            <!--TODO margin left header-->
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="register" class="nav-link">Add</a></li>
+            <li class="nav-item"><a href="remove" class="nav-link">Remove</a></li>
+            <li class="nav-item"><a href="edit" class="nav-link">Edit</a></li>
+        </ul>
+    </header>
 </div>
-<table class="table"><thead><tr><th scope="col">Имя</th><th scope="col">Фамилия</th><th scope="col">Номер группы</th><th scope="col">Баллов</th></tr></thead><tbody>
-<?php
+
+<div class="container" style="margin: 0">
+    <div class="row">
+        <div class="col-9">
+            <p class="h1">Students list</p>
+        </div>
+        <div class="col">
+            <a class="btn btn-primary btn-lg" href="register" role="button">Add</a>
+            <a class="btn btn-primary btn-lg" href="remove" role="button">Remove</a>
+            <a class="btn btn-primary btn-lg" href="edit" role="button">Edit</a>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Номер группы</th>
+            <th scope="col">Баллов</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
 foreach($students as $student) {
-echo "<tr><td>$student[name]</td><td>$student[surname]</td><td>$student[groupnumber]</td><td>$student[score]</td></tr>";
-}
-?>
-</tbody>
-</table>
+echo "<tr>
+        <td>$student[name]</td>
+        <td>$student[surname]</td>
+        <td>$student[groupnumber]</td>
+        <td>$student[score]</td>
+        </tr>";
+        }
+        ?>
+        </tbody>
+    </table>
 
 
 </body>
